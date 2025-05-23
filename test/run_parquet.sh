@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export CUFILE_LOGGING_LEVEL=TRACE
+export CUFILE_LOGGING_LEVEL=ERROR
 export CUFILE_ALLOW_COMPAT_MODE=false
 export CUFILE_FORCE_COMPAT_MODE=false
 
