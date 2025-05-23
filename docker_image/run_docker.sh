@@ -2,14 +2,19 @@
 
 rootdir=$(pwd)/..
 workdir=/home/${USER}-gds-debug
-polars_dir=/nvme/1/tialiu/polars/polars-benchmark
+
+# nvmedir=/nvme/1/${USER}
+nvmedir=/raid/${USER}
+
+# polars_dir=$nvmedir/polars/polars-tpch
+polars_dir=$nvmedir/polars/polars-tpch
 
 docker run --name ${USER}-gds-debug --rm \
 --workdir=$workdir \
 --gpus all --pull always -it --privileged=true --cap-add=SYS_ADMIN --user=root \
 --mount type=bind,src=$rootdir,dst=$workdir \
 --mount type=bind,src=$polars_dir,dst=$workdir/test/polars-benchmark \
---mount type=bind,src=/nvme/1/${USER},dst=/mnt/nvme \
+--mount type=bind,src=$nvmedir,dst=/mnt/nvme \
 --volume /run/udev:/run/udev:ro \
 --hostname=custom-cudf-host \
 --entrypoint="$workdir/docker_image/entrypoint.sh" \
