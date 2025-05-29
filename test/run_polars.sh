@@ -4,7 +4,7 @@
 
 polar_bench_dir=polars-benchmark
 
-export PYTHONPATH=$polar_bench_dir
+# export PYTHONPATH=$polar_bench_dir
 
 # export CUDA_VISIBLE_DEVICES=6
 
@@ -32,10 +32,10 @@ cd $polar_bench_dir
 # SCALE_FACTOR=100.0 PATH_TABLES=data/tables-pyarrow RUN_POLARS_GPU=true CUDA_MODULE_LOADING=EAGER python -m queries.polars.q5
 
 # Run query 5
-# python -m queries.polars.q5
+python -m queries.polars.q5
 
 # Run all queries
-python -m queries.polars
+# python -m queries.polars
 
 # Run all
 # KVIKIO_NTHREADS=1   python -m queries.polars > $cur_dir/all_cold_1t_5iter.txt

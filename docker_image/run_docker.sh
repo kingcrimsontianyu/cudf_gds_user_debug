@@ -3,11 +3,11 @@
 rootdir=$(pwd)/..
 workdir=/home/${USER}-gds-debug
 
-# nvmedir=/nvme/1/${USER}
-nvmedir=/raid/${USER}
+nvmedir=/nvme/1/${USER}
+# nvmedir=/raid/${USER}
 
+polars_dir=$nvmedir/polars/polars-benchmark
 # polars_dir=$nvmedir/polars/polars-tpch
-polars_dir=$nvmedir/polars/polars-tpch
 
 docker run --name ${USER}-gds-debug --rm \
 --workdir=$workdir \
